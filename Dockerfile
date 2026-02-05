@@ -65,10 +65,11 @@ ENV LC0_PATH=/opt/lc0/lc0
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Download LC0 neural network (BT4-1024x15x32h)
+# Download LC0 neural network (BT4-1024x15x32h-swa-6147500, ~320MB)
 RUN mkdir -p /app/networks \
-    && curl -sL "https://training.lczero.org/get_network?sha=6147500" \
-    -o /app/networks/BT4.pb.gz
+    && curl -sL "https://storage.lczero.org/files/networks-contrib/big-transformers/BT4-1024x15x32h-swa-6147500.pb.gz" \
+    -o /app/networks/BT4.pb.gz \
+    && ls -la /app/networks/
 
 ENV LC0_NETWORK=/app/networks/BT4.pb.gz
 
