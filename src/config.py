@@ -34,8 +34,8 @@ class Settings(BaseSettings):
 
     # Default analysis parameters
     default_nodes: int = 100000
-    default_num_moves: int = 10
-    default_depth: int = 20  # For Stockfish
+    default_num_moves: int = 15
+    default_depth: int = 25  # For Stockfish
 
     class Config:
         env_prefix = ""
